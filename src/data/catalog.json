@@ -1,0 +1,823 @@
+{
+  "elementals": [
+    {
+      "id": "water_basic",
+      "type": "Água",
+      "rarity": "Raro",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/water/water_default.webp"
+    },
+    {
+      "id": "water_gold",
+      "type": "Água",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/water/water_gold.webp"
+    },
+    {
+      "id": "water_candy",
+      "type": "Água",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/water/water_candy.webp"
+    },
+    {
+      "id": "water_galaxy",
+      "type": "Água",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/water/water_galaxy.webp"
+    },
+    {
+      "id": "water_holofoil",
+      "type": "Água",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/water/water_holofoil.webp"
+    },
+    {
+      "id": "water_gem",
+      "type": "Água",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/water/water_gem.webp"
+    },
+    {
+      "id": "water_quack",
+      "type": "Água",
+      "rarity": "Especial",
+      "variation": "Quack",
+      "imagePath": "assets/elementals/water/water_quack.webp"
+    },
+    {
+      "id": "earth_basic",
+      "type": "Terra",
+      "rarity": "Raro",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/earth/earth_default.webp"
+    },
+    {
+      "id": "earth_gold",
+      "type": "Terra",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/earth/earth_gold.webp"
+    },
+    {
+      "id": "earth_candy",
+      "type": "Terra",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/earth/earth_candy.webp"
+    },
+    {
+      "id": "earth_galaxy",
+      "type": "Terra",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/earth/earth_galaxy.webp"
+    },
+    {
+      "id": "earth_cube",
+      "type": "Terra",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/earth/earth_cube.webp"
+    },
+    {
+      "id": "earth_gem",
+      "type": "Terra",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/earth/earth_gem.webp"
+    },
+    {
+      "id": "earth_quack",
+      "type": "Terra",
+      "rarity": "Especial",
+      "variation": "Quack",
+      "imagePath": "assets/elementals/earth/earth_quack.webp"
+    },
+    {
+      "id": "fire_basic",
+      "type": "Fogo",
+      "rarity": "Raro",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/fire/fire_default.webp"
+    },
+    {
+      "id": "fire_gold",
+      "type": "Fogo",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/fire/fire_gold.webp"
+    },
+    {
+      "id": "fire_candy",
+      "type": "Fogo",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/fire/fire_candy.webp"
+    },
+    {
+      "id": "fire_galaxy",
+      "type": "Fogo",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/fire/fire_galaxy.webp"
+    },
+    {
+      "id": "fire_holofoil",
+      "type": "Fogo",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/fire/fire_holofoil.webp"
+    },
+    {
+      "id": "fire_cube",
+      "type": "Fogo",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/fire/fire_cube.webp"
+    },
+    {
+      "id": "fire_quack",
+      "type": "Fogo",
+      "rarity": "Especial",
+      "variation": "Quack",
+      "imagePath": "assets/elementals/fire/fire_quack.webp"
+    },
+    {
+      "id": "air_basic",
+      "type": "Ar",
+      "rarity": "Raro",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/air/air_default.webp"
+    },
+    {
+      "id": "air_gold",
+      "type": "Ar",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/air/air_gold.webp"
+    },
+    {
+      "id": "air_candy",
+      "type": "Ar",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/air/air_candy.webp"
+    },
+    {
+      "id": "air_galaxy",
+      "type": "Ar",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/air/air_galaxy.webp"
+    },
+    {
+      "id": "air_holofoil",
+      "type": "Ar",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/air/air_holofoil.webp"
+    },
+    {
+      "id": "fishy_basic",
+      "type": "Peixoto",
+      "rarity": "Raro",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/fishy/fishy_default.webp"
+    },
+    {
+      "id": "fishy_gold",
+      "type": "Peixoto",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/fishy/fishy_gold.webp"
+    },
+    {
+      "id": "fishy_candy",
+      "type": "Peixoto",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/fishy/fishy_candy.webp"
+    },
+    {
+      "id": "fishy_galaxy",
+      "type": "Peixoto",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/fishy/fishy_galaxy.webp"
+    },
+    {
+      "id": "fishy_cube",
+      "type": "Peixoto",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/fishy/fishy_cube.webp"
+    },
+    {
+      "id": "sleepy_basic",
+      "type": "Sonolento",
+      "rarity": "Lendário",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/sleepy/sleepy_default.webp"
+    },
+    {
+      "id": "sleepy_gold",
+      "type": "Sonolento",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/sleepy/sleepy_gold.webp"
+    },
+    {
+      "id": "sleepy_candy",
+      "type": "Sonolento",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/sleepy/sleepy_candy.webp"
+    },
+    {
+      "id": "sleepy_galaxy",
+      "type": "Sonolento",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/sleepy/sleepy_galaxy.webp"
+    },
+    {
+      "id": "sleepy_cube",
+      "type": "Sonolento",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/sleepy/sleepy_cube.webp"
+    },
+    {
+      "id": "fillergrunt_basic",
+      "type": "John Wick",
+      "rarity": "Mítico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/fillergrunt/fillergrunt_default.webp"
+    },
+    {
+      "id": "duck_basic",
+      "type": "Pato",
+      "rarity": "Épico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/duck/duck_default.webp"
+    },
+    {
+      "id": "duck_gold",
+      "type": "Pato",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/duck/duck_gold.webp"
+    },
+    {
+      "id": "duck_candy",
+      "type": "Pato",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/duck/duck_candy.webp"
+    },
+    {
+      "id": "duck_galaxy",
+      "type": "Pato",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/duck/duck_galaxy.webp"
+    },
+    {
+      "id": "duck_gem",
+      "type": "Pato",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/duck/duck_gem.webp"
+    },
+    {
+      "id": "ghost_basic",
+      "type": "Fantasma",
+      "rarity": "Épico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/ghost/ghost_default.webp"
+    },
+    {
+      "id": "ghost_gold",
+      "type": "Fantasma",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/ghost/ghost_gold.webp"
+    },
+    {
+      "id": "ghost_candy",
+      "type": "Fantasma",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/ghost/ghost_candy.webp"
+    },
+    {
+      "id": "ghost_galaxy",
+      "type": "Fantasma",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/ghost/ghost_galaxy.webp"
+    },
+    {
+      "id": "ghost_holofoil",
+      "type": "Fantasma",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/ghost/ghost_holofoil.webp"
+    },
+    {
+      "id": "demon_basic",
+      "type": "Demônio",
+      "rarity": "Épico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/demon/demon_default.webp"
+    },
+    {
+      "id": "demon_gold",
+      "type": "Demônio",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/demon/demon_gold.webp"
+    },
+    {
+      "id": "demon_candy",
+      "type": "Demônio",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/demon/demon_candy.webp"
+    },
+    {
+      "id": "demon_galaxy",
+      "type": "Demônio",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/demon/demon_galaxy.webp"
+    },
+    {
+      "id": "demon_gem",
+      "type": "Demônio",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/demon/demon_gem.webp"
+    },
+    {
+      "id": "king_basic",
+      "type": "Rei",
+      "rarity": "Épico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/king/king_default.webp"
+    },
+    {
+      "id": "king_gold",
+      "type": "Rei",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/king/king_gold.webp"
+    },
+    {
+      "id": "king_candy",
+      "type": "Rei",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/king/king_candy.webp"
+    },
+    {
+      "id": "king_galaxy",
+      "type": "Rei",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/king/king_galaxy.webp"
+    },
+    {
+      "id": "king_holofoil",
+      "type": "Rei",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/king/king_holofoil.webp"
+    },
+    {
+      "id": "drifter_basic",
+      "type": "Aura",
+      "rarity": "Épico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/drifter/drifter_default.webp"
+    },
+    {
+      "id": "drifter_gold",
+      "type": "Aura",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/drifter/drifter_gold.webp"
+    },
+    {
+      "id": "drifter_candy",
+      "type": "Aura",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/drifter/drifter_candy.webp"
+    },
+    {
+      "id": "drifter_galaxy",
+      "type": "Aura",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/drifter/drifter_galaxy.webp"
+    },
+    {
+      "id": "drifter_gem",
+      "type": "Aura",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/drifter/drifter_gem.webp"
+    },
+    {
+      "id": "soccer_basic",
+      "type": "Atacante",
+      "rarity": "Épico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/soccer/soccer_default.webp"
+    },
+    {
+      "id": "soccer_gold",
+      "type": "Atacante",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/soccer/soccer_gold.webp"
+    },
+    {
+      "id": "soccer_candy",
+      "type": "Atacante",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/soccer/soccer_candy.webp"
+    },
+    {
+      "id": "soccer_galaxy",
+      "type": "Atacante",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/soccer/soccer_galaxy.webp"
+    },
+    {
+      "id": "soccer_holofoil",
+      "type": "Atacante",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/soccer/soccer_holofoil.webp"
+    },
+    {
+      "id": "peely_basic",
+      "type": "Banana",
+      "rarity": "Lendário",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/peely/peely_default.webp"
+    },
+    {
+      "id": "peely_gold",
+      "type": "Banana",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/peely/peely_gold.webp"
+    },
+    {
+      "id": "peely_candy",
+      "type": "Banana",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/peely/peely_candy.webp"
+    },
+    {
+      "id": "peely_galaxy",
+      "type": "Banana",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/peely/peely_galaxy.webp"
+    },
+    {
+      "id": "peely_holofoil",
+      "type": "Banana",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/peely/peely_holofoil.webp"
+    },
+    {
+      "id": "punk_basic",
+      "type": "Punk",
+      "rarity": "Lendário",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/punk/punk_default.webp"
+    },
+    {
+      "id": "punk_gold",
+      "type": "Punk",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/punk/punk_gold.webp"
+    },
+    {
+      "id": "punk_candy",
+      "type": "Punk",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/punk/punk_candy.webp"
+    },
+    {
+      "id": "punk_galaxy",
+      "type": "Punk",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/punk/punk_galaxy.webp"
+    },
+    {
+      "id": "punk_cube",
+      "type": "Punk",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/punk/punk_cube.webp"
+    },
+    {
+      "id": "boss_basic",
+      "type": "Chefe",
+      "rarity": "Lendário",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/boss/boss_default.webp"
+    },
+    {
+      "id": "boss_gold",
+      "type": "Chefe",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/boss/boss_gold.webp"
+    },
+    {
+      "id": "boss_candy",
+      "type": "Chefe",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/boss/boss_candy.webp"
+    },
+    {
+      "id": "boss_galaxy",
+      "type": "Chefe",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/boss/boss_galaxy.webp"
+    },
+    {
+      "id": "boss_cube",
+      "type": "Chefe",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/boss/boss_cube.webp"
+    },
+    {
+      "id": "seven_basic",
+      "type": "Seven",
+      "rarity": "Lendário",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/seven/seven_default.webp"
+    },
+    {
+      "id": "seven_gold",
+      "type": "Seven",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/seven/seven_gold.webp"
+    },
+    {
+      "id": "seven_candy",
+      "type": "Seven",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/seven/seven_candy.webp"
+    },
+    {
+      "id": "seven_galaxy",
+      "type": "Seven",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/seven/seven_galaxy.webp"
+    },
+    {
+      "id": "seven_holofoil",
+      "type": "Seven",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/seven/seven_holofoil.webp"
+    },
+    {
+      "id": "llama_basic",
+      "type": "Lhama",
+      "rarity": "Lendário",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/llama/llama_default.webp"
+    },
+    {
+      "id": "llama_gold",
+      "type": "Lhama",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/llama/llama_gold.webp"
+    },
+    {
+      "id": "llama_candy",
+      "type": "Lhama",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/llama/llama_candy.webp"
+    },
+    {
+      "id": "llama_galaxy",
+      "type": "Lhama",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/llama/llama_galaxy.webp"
+    },
+    {
+      "id": "llama_gem",
+      "type": "Lhama",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/llama/llama_gem.webp"
+    },
+    {
+      "id": "grimreaper_basic",
+      "type": "Ceifador",
+      "rarity": "Mítico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/grim/grimreaper_default.webp"
+    },
+    {
+      "id": "grimreaper_gold",
+      "type": "Ceifador",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/grim/grimreaper_gold.webp"
+    },
+    {
+      "id": "grimreaper_candy",
+      "type": "Ceifador",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/grim/grimreaper_candy.webp"
+    },
+    {
+      "id": "grimreaper_galaxy",
+      "type": "Ceifador",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/grim/grimreaper_galaxy.webp"
+    },
+    {
+      "id": "grimreaper_holofoil",
+      "type": "Ceifador",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/grim/grimreaper_holofoil.webp"
+    },
+    {
+      "id": "grimreaper_cube",
+      "type": "Ceifador",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/grim/grimreaper_cube.webp"
+    },
+    {
+      "id": "grimreaper_gem",
+      "type": "Ceifador",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/grim/grimreaper_gem.webp"
+    },
+    {
+      "id": "zeropoint_basic",
+      "type": "Ponto Zero",
+      "rarity": "Mítico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_default.webp"
+    },
+    {
+      "id": "zeropoint_gold",
+      "type": "Ponto Zero",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_gold.webp"
+    },
+    {
+      "id": "zeropoint_candy",
+      "type": "Ponto Zero",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_candy.webp"
+    },
+    {
+      "id": "zeropoint_galaxy",
+      "type": "Ponto Zero",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_galaxy.webp"
+    },
+    {
+      "id": "zeropoint_holofoil",
+      "type": "Ponto Zero",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_holofoil.webp"
+    },
+    {
+      "id": "zeropoint_cube",
+      "type": "Ponto Zero",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_cube.webp"
+    },
+    {
+      "id": "zeropoint_gem",
+      "type": "Ponto Zero",
+      "rarity": "Especial",
+      "variation": "Gema",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_gem.webp"
+    },
+    {
+      "id": "zeropoint_quack",
+      "type": "Ponto Zero",
+      "rarity": "Especial",
+      "variation": "Quack",
+      "imagePath": "assets/elementals/zeropoint/zeropoint_quack.webp"
+    },
+    {
+      "id": "batman_basic",
+      "type": "Batman",
+      "rarity": "Mítico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/batman/batman_default.webp"
+    },
+    {
+      "id": "batman_gold",
+      "type": "Batman",
+      "rarity": "Especial",
+      "variation": "Dourado",
+      "imagePath": "assets/elementals/batman/batman_gold.webp"
+    },
+    {
+      "id": "batman_candy",
+      "type": "Batman",
+      "rarity": "Especial",
+      "variation": "Gelatinoso",
+      "imagePath": "assets/elementals/batman/batman_candy.webp"
+    },
+    {
+      "id": "batman_galaxy",
+      "type": "Batman",
+      "rarity": "Especial",
+      "variation": "Galático",
+      "imagePath": "assets/elementals/batman/batman_galaxy.webp"
+    },
+    {
+      "id": "batman_holofoil",
+      "type": "Batman",
+      "rarity": "Especial",
+      "variation": "Metalizado",
+      "imagePath": "assets/elementals/batman/batman_holofoil.webp"
+    },
+    {
+      "id": "batman_cube",
+      "type": "Batman",
+      "rarity": "Especial",
+      "variation": "Cubo",
+      "imagePath": "assets/elementals/batman/batman_cube.webp"
+    },
+    {
+      "id": "theburntpeanut_basic",
+      "type": "Amendoin Queimado",
+      "rarity": "Especial",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/burntpeanut/burntpeanut_default.webp"
+    },
+    {
+      "id": "pollo_basic",
+      "type": "Pollo",
+      "rarity": "Especial",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/pollo/pollo_default.webp"
+    },
+    {
+      "id": "vinijr_basic",
+      "type": "Vini JR",
+      "rarity": "Mítico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/vinijr/vinijr_default.webp"
+    },
+    {
+      "id": "pedicureantacid_basic",
+      "type": "Pedicure Antacid",
+      "rarity": "Mítico",
+      "variation": "Normal",
+      "imagePath": "assets/elementals/pedicureantacid/pedicureantacid_default.webp"
+    }
+  ]
+}
