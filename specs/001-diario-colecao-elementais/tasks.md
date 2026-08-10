@@ -138,15 +138,15 @@
 
 ### Tests for User Story 4 (TDD — escrever primeiro e vê-los FALHAR) ⚠️
 
-- [ ] T039 [P] [US4] Escrever os testes da Store derivada em `tests/unit/stores/collected-items.test.ts`: `collectedItems` resolve os IDs contra o catálogo, descarta órfãos silenciosamente e segue a ordenação canônica; emite apenas em mudanças confirmadas do conjunto; lista vazia quando a coleção está vazia
-- [ ] T040 [P] [US4] Escrever os testes da página da coleção em `tests/unit/components/collection-page.test.ts`: cada linha exibe miniatura, nome, raridade, variação e check verde; coleção vazia ⇒ `EmptyCollection` com orientação de explorar o catálogo; modo degradado ⇒ aviso de que a coleção não pôde ser carregada (mensagem distinta da de coleção vazia, sem lista parcial)
+- [X] T039 [P] [US4] Escrever os testes da Store derivada em `tests/unit/stores/collected-items.test.ts`: `collectedItems` resolve os IDs contra o catálogo, descarta órfãos silenciosamente e segue a ordenação canônica; emite apenas em mudanças confirmadas do conjunto; lista vazia quando a coleção está vazia
+- [X] T040 [P] [US4] Escrever os testes da página da coleção em `tests/unit/components/collection-page.test.ts`: cada linha exibe miniatura, nome, raridade, variação e check verde; coleção vazia ⇒ `EmptyCollection` com orientação de explorar o catálogo; modo degradado ⇒ aviso de que a coleção não pôde ser carregada (mensagem distinta da de coleção vazia, sem lista parcial)
 
 ### Implementation for User Story 4
 
-- [ ] T041 [US4] Implementar `src/lib/stores/collected-items.ts`: `collectedItems` derivado de `collectionStore.collection` × módulo de catálogo (resolve IDs, descarta órfãos, ordena pela sequência canônica) (depende de T019)
-- [ ] T042 [P] [US4] Criar `src/lib/components/collection/CollectionListItem.svelte`: linha com miniatura (`ElementalImage`), nome, raridade, variação e check verde de posse
-- [ ] T043 [P] [US4] Criar `src/lib/components/collection/EmptyCollection.svelte`: estado vazio com mensagem orientando o usuário a explorar o catálogo e link para a home
-- [ ] T044 [US4] Implementar a página da coleção: `src/routes/colecao/+page.ts` e `src/routes/colecao/+page.svelte` renderizando a lista de `collectedItemsStore.collectedItems`, o estado vazio (`EmptyCollection`) e o estado degradado com mensagem distinta, sem lista parcial (depende de T041–T043)
+- [X] T041 [US4] Implementar `src/lib/stores/collected-items.ts`: `collectedItems` derivado de `collectionStore.collection` × módulo de catálogo (resolve IDs, descarta órfãos, ordena pela sequência canônica) (depende de T019)
+- [X] T042 [P] [US4] Criar `src/lib/components/collection/CollectionListItem.svelte`: linha com miniatura (`ElementalImage`), nome, raridade, variação e check verde de posse
+- [X] T043 [P] [US4] Criar `src/lib/components/collection/EmptyCollection.svelte`: estado vazio com mensagem orientando o usuário a explorar o catálogo e link para a home
+- [X] T044 [US4] Implementar a página da coleção: `src/routes/colecao/+page.ts` e `src/routes/colecao/+page.svelte` renderizando a lista de `collectedItemsStore.collectedItems`, o estado vazio (`EmptyCollection`) e o estado degradado com mensagem distinta, sem lista parcial (depende de T041–T043)
 
 **Checkpoint**: US4 testável de forma independente — apenas os itens marcados, na ordem do catálogo, sem órfãos; estados vazio e degradado distintos; US1–US3 intactas
 
