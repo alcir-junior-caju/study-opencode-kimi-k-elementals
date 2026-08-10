@@ -4,6 +4,7 @@
 
 	export let elemental: Elemental;
 	export let isEditing = false;
+	export let onRemove: (() => void) | undefined = undefined;
 
 	$: displayName = `${elemental.type} ${elemental.variation}`;
 </script>
@@ -18,7 +19,7 @@
 		</p>
 	</div>
 	<span class="collected-check" aria-label="coletado">✓</span>
-	{#if isEditing}
-		<slot name="actions" />
+	{#if isEditing && onRemove}
+		<button type="button" class="remove-button" on:click={onRemove}>Remover</button>
 	{/if}
 </li>

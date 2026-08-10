@@ -160,14 +160,14 @@
 
 ### Tests for User Story 5 (TDD — escrever primeiro e vê-los FALHAR) ⚠️
 
-- [ ] T045 [P] [US5] Escrever os testes do modo de edição da Store em `tests/unit/stores/collection-edit.test.ts`: `isEditing` alterna o modo; `remove(id)` delega ao toggle e resolve após gravação confirmada; falha de escrita ⇒ rejeita e o item permanece na lista; remover o último item ⇒ lista vazia
-- [ ] T046 [P] [US5] Escrever os testes do modo de edição da página em `tests/unit/components/collection-edit-mode.test.ts`: botão **Editar coleção** ativa o modo com ação de remoção por item; remoção confirmada ⇒ item some imediatamente; remover todos ⇒ estado vazio; falha de gravação ⇒ item permanece + mensagem explícita; encerrar edição ⇒ lista reflete o estado final
+- [X] T045 [P] [US5] Escrever os testes do modo de edição da Store em `tests/unit/stores/collection-edit.test.ts`: `isEditing` alterna o modo; `remove(id)` delega ao toggle e resolve após gravação confirmada; falha de escrita ⇒ rejeita e o item permanece na lista; remover o último item ⇒ lista vazia
+- [X] T046 [P] [US5] Escrever os testes do modo de edição da página em `tests/unit/components/collection-edit-mode.test.ts`: botão **Editar coleção** ativa o modo com ação de remoção por item; remoção confirmada ⇒ item some imediatamente; remover todos ⇒ estado vazio; falha de gravação ⇒ item permanece + mensagem explícita; encerrar edição ⇒ lista reflete o estado final
 
 ### Implementation for User Story 5
 
-- [ ] T047 [US5] Adicionar `isEditing` (`Writable<boolean>`) e `remove(id)` (delegando a `collectionStore.toggle`) em `src/lib/stores/collected-items.ts` (depende de T041)
-- [ ] T048 [US5] Criar `src/lib/components/collection/EditCollectionBar.svelte`: botão **Editar coleção** / encerrar edição alternando `collectedItemsStore.isEditing`
-- [ ] T049 [US5] Integrar o modo de edição: ação de remoção por item em `src/lib/components/collection/CollectionListItem.svelte` (visível quando `isEditing`) e `EditCollectionBar` + exibição da mensagem de falha de remoção em `src/routes/colecao/+page.svelte` (depende de T044, T047, T048)
+- [X] T047 [US5] Adicionar `isEditing` (`Writable<boolean>`) e `remove(id)` (delegando a `collectionStore.toggle`) em `src/lib/stores/collected-items.ts` (depende de T041)
+- [X] T048 [US5] Criar `src/lib/components/collection/EditCollectionBar.svelte`: botão **Editar coleção** / encerrar edição alternando `collectedItemsStore.isEditing`
+- [X] T049 [US5] Integrar o modo de edição: ação de remoção por item em `src/lib/components/collection/CollectionListItem.svelte` (visível quando `isEditing`) e `EditCollectionBar` + exibição da mensagem de falha de remoção em `src/routes/colecao/+page.svelte` (depende de T044, T047, T048)
 
 **Checkpoint**: US5 testável de forma independente — edição, remoção imediata, estado vazio ao remover todos, falha sem perda visual; US1–US4 intactas
 
