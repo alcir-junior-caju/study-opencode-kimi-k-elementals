@@ -94,13 +94,13 @@
 
 ### Tests for User Story 2 (TDD — escrever primeiro e vê-los FALHAR) ⚠️
 
-- [ ] T027 [P] [US2] Escrever o teste do controle de posse em `tests/unit/components/collection-toggle.test.ts`: um clique dispara `collectionStore.toggle(id)`; o estado visual reflete a posse confirmada; clique em item colecionado desmarca; controle desabilitado em `degraded`; rejeição do toggle ⇒ estado visual inalterado + mensagem acionável informando que a seleção não foi salva
-- [ ] T028 [P] [US2] Escrever o teste de integração do fluxo de marcação em `tests/integration/collection-toggle-flow.test.ts` com `fake-indexeddb/auto`: marcar itens via Store grava o registro versionado com os IDs; nova instância da Store hidratada do mesmo banco recupera 100% das marcações (simula recarregar a página); falha de escrita simulada ⇒ rollback e rejeição, sem registro parcial
+- [x] T027 [P] [US2] Escrever o teste do controle de posse em `tests/unit/components/collection-toggle.test.ts`: um clique dispara `collectionStore.toggle(id)`; o estado visual reflete a posse confirmada; clique em item colecionado desmarca; controle desabilitado em `degraded`; rejeição do toggle ⇒ estado visual inalterado + mensagem acionável informando que a seleção não foi salva
+- [x] T028 [P] [US2] Escrever o teste de integração do fluxo de marcação em `tests/integration/collection-toggle-flow.test.ts` com `fake-indexeddb/auto`: marcar itens via Store grava o registro versionado com os IDs; nova instância da Store hidratada do mesmo banco recupera 100% das marcações (simula recarregar a página); falha de escrita simulada ⇒ rollback e rejeição, sem registro parcial
 
 ### Implementation for User Story 2
 
-- [ ] T029 [US2] Implementar `src/lib/components/elemental/CollectionToggle.svelte`: controle de posse de um clique consumindo `collectionStore.has(id)`/`toggle(id)`, desabilitado com aviso em `degraded`, com região `aria-live` para a mensagem de falha de gravação sem alterar o estado visual
-- [ ] T030 [US2] Integrar o `CollectionToggle` ao card em `src/lib/components/catalog/ElementalCard.svelte`, mantendo a indicação de posse reativa em tempo real na listagem (depende de T025, T029)
+- [x] T029 [US2] Implementar `src/lib/components/elemental/CollectionToggle.svelte`: controle de posse de um clique consumindo `collectionStore.has(id)`/`toggle(id)`, desabilitado com aviso em `degraded`, com região `aria-live` para a mensagem de falha de gravação sem alterar o estado visual
+- [x] T030 [US2] Integrar o `CollectionToggle` ao card em `src/lib/components/catalog/ElementalCard.svelte`, mantendo a indicação de posse reativa em tempo real na listagem (depende de T025, T029)
 
 **Checkpoint**: US2 testável de forma independente — marcar, recarregar e confirmar persistência; falha simulada gera mensagem sem mudança visual; US1 segue intacta
 
