@@ -7,7 +7,7 @@ module.exports = {
 			roots: ['<rootDir>/tests/unit'],
 			setupFilesAfterEnv: ['<rootDir>/tests/setup.ts'],
 			transform: {
-				'^.+\\.ts$': 'ts-jest',
+				'^.+\\.(js|ts)$': 'ts-jest',
 				'^.+\\.svelte$': [
 					'svelte-jester',
 					{ preprocess: true, compiler: 'svelte' }
@@ -18,7 +18,8 @@ module.exports = {
 				'^\\$lib/(.*)$': '<rootDir>/src/lib/$1',
 				'^\\$data/(.*)$': '<rootDir>/src/data/$1',
 				'^\\$app/(.*)$': '<rootDir>/tests/mocks/sveltekit/$1.ts'
-			}
+			},
+			transformIgnorePatterns: ['node_modules/(?!(svelte|idb-keyval|esm-env)/)']
 		},
 		{
 			displayName: 'integration',
@@ -34,7 +35,8 @@ module.exports = {
 				'^\\$lib/(.*)$': '<rootDir>/src/lib/$1',
 				'^\\$data/(.*)$': '<rootDir>/src/data/$1',
 				'^\\$app/(.*)$': '<rootDir>/tests/mocks/sveltekit/$1.ts'
-			}
+			},
+			transformIgnorePatterns: ['node_modules/(?!(idb-keyval)/)']
 		}
 	]
 };
