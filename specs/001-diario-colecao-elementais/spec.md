@@ -160,6 +160,17 @@ A partir da página da coleção, o jogador clica em **Editar coleção** e a li
 | FR-006 Carga do catálogo a partir de seed estático | FR-012 |
 | Transversais do PRD (sem login; sem busca/filtros/estatísticas) | FR-013, FR-015 |
 
+**Rastreabilidade das metas do PRD para Critérios de Sucesso desta spec**:
+
+| Meta do PRD (Objetivos e métricas) | SC correspondente |
+|---|---|
+| Carregar o catálogo < 200 ms com cache estático | SC-007, SC-011 |
+| 100% das seleções preservadas após fechar/reabrir o navegador | SC-004 |
+| 0 etapas de autenticação | SC-006 |
+| Cobertura do seed: 117 itens e 25 tipos, 100% do catálogo-fonte | SC-001 |
+| Bundle JavaScript inicial < 150 KB gzip | SC-011 |
+| Cold start < 2 s em conexão 4G | SC-011 |
+
 ### Entidades-chave
 
 - **Elemental**: item colecionável do catálogo. Atributos: identificador único (ID), nome, tipo, raridade, variação e imagem (placeholder nesta entrega). Imutável em tempo de execução.
@@ -200,7 +211,7 @@ A partir da página da coleção, o jogador clica em **Editar coleção** e a li
 ## Premissas
 
 - Um usuário por navegador/dispositivo: a coleção é pessoal e local, sem necessidade de identidade.
-- O usuário utiliza navegadores modernos, nas versões corrente e penúltima, com suporte ao armazenamento local do navegador.
+- O usuário utiliza navegadores modernos, nas versões corrente e penúltima (Chrome, Firefox, Safari, Edge), com suporte ao armazenamento local do navegador; a matriz de compatibilidade valida IndexedDB, layout responsivo nos breakpoints definidos, navegação por teclado/clique/toque e navegação circular.
 - O primeiro carregamento exige conexão com a internet; não há requisito de uso offline nesta entrega.
 - A tabela-fonte do catálogo (`docs/elementals.md`) é a fonte da verdade e está completa e consistente (117 itens, 25 tipos); atualizações do conjunto do jogo geram nova versão publicada da aplicação.
 - Imagens placeholder são aceitáveis nesta entrega e serão substituídas pelos assets finais em iteração futura, sem mudança de comportamento.

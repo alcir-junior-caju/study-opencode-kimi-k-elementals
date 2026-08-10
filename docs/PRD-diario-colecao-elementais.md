@@ -38,13 +38,14 @@ Problemas priorizados
 
 ### Objetivos e métricas
 
-| Objetivo                                                  | Métrica                                                  | Meta              |
-| --------------------------------------------------------- | -------------------------------------------------------- | ----------------- |
-| Carregar o catálogo rapidamente                           | Tempo de carregamento do catálogo com cache estático     | Menor que 200 ms  |
-| Preservar a coleção do usuário entre sessões              | Percentual de seleções mantidas após fechar e reabrir o navegador | 100 por cento     |
-| Eliminar fricção de acesso                                | Etapas de autenticação exigidas para usar a aplicação    | 0 (sem login)     |
-| Cobrir todo o conjunto de colecionáveis                   | Cobertura do seed em relação ao catálogo-fonte           | 117 itens e 25 tipos, 100 por cento do catálogo |
-| Garantir boa experiência em dispositivos móveis           | Peso do bundle JavaScript inicial                        | Abaixo de 150 KB gzip |
+| Objetivo                                                  | Métrica                                                  | Meta              | Critério de sucesso / SC |
+| --------------------------------------------------------- | -------------------------------------------------------- | ----------------- | ------------------------ |
+| Carregar o catálogo rapidamente                           | Tempo de carregamento do catálogo com cache estático     | Menor que 200 ms  | SC-007, SC-011           |
+| Preservar a coleção do usuário entre sessões              | Percentual de seleções mantidas após fechar e reabrir o navegador | 100 por cento     | SC-004                   |
+| Eliminar fricção de acesso                                | Etapas de autenticação exigidas para usar a aplicação    | 0 (sem login)     | SC-006                   |
+| Cobrir todo o conjunto de colecionáveis                   | Cobertura do seed em relação ao catálogo-fonte           | 117 itens e 25 tipos, 100 por cento do catálogo | SC-001 |
+| Garantir boa experiência em dispositivos móveis           | Peso do bundle JavaScript inicial                        | Abaixo de 150 KB gzip | SC-011               |
+| Garantir cold start rápido em mobile                      | Tempo até a home interativa em conexão 4G                | Menor que 2 s     | SC-011                   |
 
 ---
 
@@ -245,11 +246,19 @@ Confiabilidade e integridade
 Compatibilidade e portabilidade
 
 - Navegadores modernos com suporte a IndexedDB e ES modules: versões correntes e penúltima de Chrome, Firefox, Safari e Edge.
-- Layout responsivo para uso em desktop e dispositivos móveis.
+- A matriz de compatibilidade dos navegadores acima é escopo de validação de layout responsivo, navegação (por teclado, clique e toque) e funcionamento do IndexedDB.
+- Layout responsivo para uso em desktop e dispositivos móveis, com os seguintes critérios objetivos:
+  - viewport de 320 px a 1440 px sem scroll horizontal forçado;
+  - breakpoint mobile/tablet: largura < 768 px, com cards em 2 colunas e seções empilhadas verticalmente;
+  - breakpoint desktop: largura ≥ 768 px, com cards em até 4 colunas e seções lado a lado quando couberem;
+  - áreas de toque mínimas de 44 × 44 px para botões e toggles.
 
 Acessibilidade
 
-- Diretriz de acessibilidade inspirada na WCAG 2.1 AA, sem exigência de conformidade formal: navegação por teclado nos botões e no toggle, contraste adequado e textos alternativos nas imagens.
+- Critérios objetivos de acessibilidade, alinhados às diretrizes da WCAG 2.1 AA:
+  - todos os controles interativos (botões anterior/próximo, **Editar coleção**, toggle de posse na listagem e na tela individual) devem ser operáveis por teclado (navegação por Tab e ativação por Enter ou Espaço);
+  - todo placeholder de elemental deve possuir texto alternativo (`alt`) descritivo composto por tipo e variação (ex.: "Água Normal");
+  - contraste mínimo de 4.5:1 para texto e 3:1 para componentes interativos e bordas de foco.
 
 ---
 
@@ -381,7 +390,7 @@ Tipos de teste obrigatórios
 
 - Testes unitários com Jest e `@testing-library/svelte`, cobrindo a lógica das Stores (adição, remoção e derivação da coleção) e os componentes de listagem, tela individual e coleção.
 - Testes de integração do fluxo de persistência, simulando o IndexedDB via `fake-indexeddb` para validar gravação, leitura e remoção de IDs.
-- Testes de compatibilidade em matriz de navegadores (versões correntes e penúltima de Chrome, Firefox, Safari e Edge), validando IndexedDB, layout responsivo e navegação.
+- Testes de compatibilidade em matriz de navegadores (versões correntes e penúltima de Chrome, Firefox, Safari e Edge), validando IndexedDB, layout responsivo nos breakpoints definidos, navegação por teclado/clique/toque e navegação circular da tela individual.
 - Medição de performance do carregamento do catálogo, verificando a meta de 200 ms com cache, e do peso do bundle.
 - Validação de schema do seed JSON no pipeline de build.
 - Teste end-to-end do fluxo crítico: abrir a home, marcar itens, recarregar, abrir a coleção e remover um item em modo de edição.
