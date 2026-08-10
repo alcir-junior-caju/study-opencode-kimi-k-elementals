@@ -4,6 +4,13 @@
 
 	let currentSrc = src;
 
+	function normalizeSrc(value: string): string {
+		if (value.startsWith('/') || value.startsWith('data:') || value.startsWith('http')) {
+			return value;
+		}
+		return `/${value}`;
+	}
+
 	function handleError() {
 		const fallback =
 			'data:image/webp;base64,UklGRiIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEADsD+JaQAA3AAAAAA';
@@ -12,7 +19,7 @@
 		}
 	}
 
-	$: currentSrc = src;
+	$: currentSrc = normalizeSrc(src);
 </script>
 
 <img src={currentSrc} {alt} loading="lazy" on:error={handleError} />

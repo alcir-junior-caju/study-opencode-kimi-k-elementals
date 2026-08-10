@@ -10,7 +10,7 @@ import type { CollectionStatus } from '$lib/stores/collection';
 
 let mockCollection: Writable<Set<string>> = writable(new Set<string>());
 let mockStatus: Writable<CollectionStatus> = writable('active');
-let mockToggle = jest.fn<() => Promise<void>>();
+let mockToggle = jest.fn<(id: string) => Promise<void>>();
 
 jest.unstable_mockModule('$lib/stores/collection', () => {
 	return {

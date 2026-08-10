@@ -6,7 +6,7 @@ import {
 	type Rarity,
 	type ElementalType
 } from '$lib/domain/elemental';
-import type { CatalogGroup } from '$lib/domain/catalog-group';
+import type { CatalogGroup, Neighbors } from '$lib/domain/catalog-group';
 import rawCatalog from '$data/catalog.json';
 
 export class CatalogIntegrityError extends Error {
@@ -68,6 +68,7 @@ export interface CatalogModule {
 	getByRarity(rarity: Rarity): readonly Elemental[];
 	getByType(type: ElementalType): readonly Elemental[];
 	groupedByRarityAndType(): readonly CatalogGroup[];
+	getNeighbors(id: string): Neighbors | undefined;
 }
 
 function createCatalogIndex(elementals: Elemental[]): CatalogModule {
@@ -75,8 +76,11 @@ function createCatalogIndex(elementals: Elemental[]): CatalogModule {
 
 	const sequence = Object.freeze([...elementals].sort(compareElemental));
 	const byId = new Map<string, Elemental>();
-	for (const item of sequence) {
+	const positionById = new Map<string, number>();
+	for (let i = 0; i < sequence.length; i++) {
+		const item = sequence[i];
 		byId.set(item.id, item);
+		positionById.set(item.id, i);
 	}
 
 	const byRarity = new Map<Rarity, Elemental[]>();
@@ -127,12 +131,24 @@ function createCatalogIndex(elementals: Elemental[]): CatalogModule {
 		return groupedByRarityAndTypeResult;
 	}
 
+	function getNeighbors(id: string): Neighbors | undefined {
+		const position = positionById.get(id);
+		if (position === undefined) return undefined;
+
+		const total = sequence.length;
+		const previousId = sequence[(position - 1 + total) % total].id;
+		const nextId = sequence[(position + 1) % total].id;
+
+		return Object.freeze({ previousId, nextId, position, total });
+	}
+
 	return {
 		getAll,
 		getById,
 		getByRarity,
 		getByType,
-		groupedByRarityAndType
+		groupedByRarityAndType,
+		getNeighbors
 	};
 }
 

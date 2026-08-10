@@ -114,17 +114,17 @@
 
 ### Tests for User Story 3 (TDD — escrever primeiro e vê-los FALHAR) ⚠️
 
-- [ ] T031 [P] [US3] Escrever os testes de navegação circular em `tests/unit/catalog/neighbors.test.ts`: `getNeighbors(id)` retorna `previousId`/`nextId`/`position`/`total` conforme a sequência canônica; primeiro item ⇒ `previousId` é o último; último item ⇒ `nextId` é o primeiro; ID inexistente ⇒ `undefined`
-- [ ] T032 [P] [US3] Escrever os testes dos componentes da tela individual em `tests/unit/components/elemental-detail.test.ts`: `ElementalDetail` exibe cabeçalho com nome, raridade e variação e imagem em destaque com fallback de placeholder; `CircularNav` renderiza anterior/próximo com os IDs vizinhos e o toggle central; toggle desabilitado em `degraded`
-- [ ] T033 [P] [US3] Escrever os testes da rota individual em `tests/unit/routes/elemental-page.test.ts`: `entries()` retorna exatamente os 117 IDs do seed; `load(id)` válido retorna elemental + neighbors; `load` com ID inexistente dispara `redirect(307, '/')`
+- [x] T031 [P] [US3] Escrever os testes de navegação circular em `tests/unit/catalog/neighbors.test.ts`: `getNeighbors(id)` retorna `previousId`/`nextId`/`position`/`total` conforme a sequência canônica; primeiro item ⇒ `previousId` é o último; último item ⇒ `nextId` é o primeiro; ID inexistente ⇒ `undefined`
+- [x] T032 [P] [US3] Escrever os testes dos componentes da tela individual em `tests/unit/components/elemental-detail.test.ts`: `ElementalDetail` exibe cabeçalho com nome, raridade e variação e imagem em destaque com fallback de placeholder; `CircularNav` renderiza anterior/próximo com os IDs vizinhos e o toggle central; toggle desabilitado em `degraded`
+- [x] T033 [P] [US3] Escrever os testes da rota individual em `tests/unit/routes/elemental-page.test.ts`: `entries()` retorna exatamente os 117 IDs do seed; `load(id)` válido retorna elemental + neighbors; `load` com ID inexistente dispara `redirect(307, '/')`
 
 ### Implementation for User Story 3
 
-- [ ] T034 [US3] Adicionar `getNeighbors(id)` ao módulo de catálogo em `src/lib/catalog/index.ts`: resolução O(1) via `Map` de posições com wrap-around aritmético (`(pos ± 1 + total) % total`), retornando `undefined` para ID inválido (depende de T018)
-- [ ] T035 [P] [US3] Criar `src/lib/components/elemental/ElementalDetail.svelte`: cabeçalho com nome, raridade e variação + `ElementalImage` em destaque centralizado
-- [ ] T036 [P] [US3] Criar `src/lib/components/elemental/CircularNav.svelte`: rodapé com links anterior/próximo (`/elemental/[previousId|nextId]`, com `data-sveltekit-preload-data`) e `CollectionToggle` ao centro
-- [ ] T037 [US3] Implementar a rota individual: `src/routes/elemental/[id]/+page.ts` com `entries()` retornando os 117 IDs e `load()` resolvendo `getById`/`getNeighbors` (ID inválido ⇒ `redirect(307, '/')`), e `src/routes/elemental/[id]/+page.svelte` compondo `ElementalDetail` + `CircularNav` (depende de T034–T036)
-- [ ] T038 [P] [US3] Criar `src/routes/+error.svelte`: página 404 amigável com orientação de retorno ao catálogo (servida em acesso direto a `/elemental/<id>` inexistente)
+- [x] T034 [US3] Adicionar `getNeighbors(id)` ao módulo de catálogo em `src/lib/catalog/index.ts`: resolução O(1) via `Map` de posições com wrap-around aritmético (`(pos ± 1 + total) % total`), retornando `undefined` para ID inválido (depende de T018)
+- [x] T035 [P] [US3] Criar `src/lib/components/elemental/ElementalDetail.svelte`: cabeçalho com nome, raridade e variação + `ElementalImage` em destaque centralizado
+- [x] T036 [P] [US3] Criar `src/lib/components/elemental/CircularNav.svelte`: rodapé com links anterior/próximo (`/elemental/[previousId|nextId]`, com `data-sveltekit-preload-data`) e `CollectionToggle` ao centro
+- [x] T037 [US3] Implementar a rota individual: `src/routes/elemental/[id]/+page.ts` com `entries()` retornando os 117 IDs e `load()` resolvendo `getById`/`getNeighbors` (ID inválido ⇒ `redirect(307, '/')`), e `src/routes/elemental/[id]/+page.svelte` compondo `ElementalDetail` + `CircularNav` (depende de T034–T036)
+- [x] T038 [P] [US3] Criar `src/routes/+error.svelte`: página 404 amigável com orientação de retorno ao catálogo (servida em acesso direto a `/elemental/<id>` inexistente)
 
 **Checkpoint**: US3 testável de forma independente — navegação circular completa pelos 117 itens, toggle persistindo, redirect suave para ID inválido; US1/US2 intactas
 
