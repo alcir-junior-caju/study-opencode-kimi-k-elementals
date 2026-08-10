@@ -2,6 +2,7 @@
  * T008 — Testes unitários da Store da coleção.
  */
 
+import { jest } from '@jest/globals';
 import { get } from 'svelte/store';
 import { createCollectionStore } from '$lib/stores/collection';
 import type { PersistenceAdapter } from '$lib/persistence/adapter';
@@ -129,7 +130,7 @@ describe('CollectionStore', () => {
 	});
 
 	it('toggle rejeita sem gravar para ID fora do catálogo', async () => {
-		const save = jest.fn();
+		const save = jest.fn() as unknown as (ids: string[]) => Promise<void>;
 		const adapter = createFakeAdapter({ saveCollection: save });
 		const store = createCollectionStore(adapter, createFakeCatalog([water.id]));
 		await store.hydrate();
@@ -140,7 +141,7 @@ describe('CollectionStore', () => {
 	});
 
 	it('toggle rejeita imediatamente em modo degraded', async () => {
-		const save = jest.fn();
+		const save = jest.fn() as unknown as (ids: string[]) => Promise<void>;
 		const adapter = createFakeAdapter({
 			async isStorageAvailable() {
 				return false;
@@ -196,8 +197,9 @@ describe('CollectionStore', () => {
 	});
 
 	it('solicita navigator.storage.persist() quando a API existe', async () => {
-		const persist = jest.fn().mockResolvedValue(undefined);
-		const originalPersist = navigator.storage?.persist;
+		const persist = jest.fn() as jest.Mock<() => Promise<boolean>>;
+		persist.mockResolvedValue(true);
+		const originalPersist = navigator.storage?.persist as (() => Promise<boolean>) | undefined;
 		// @ts-expect-error mock da API de storage
 		navigator.storage = { persist };
 

@@ -2,6 +2,8 @@ import { writable, derived, get, type Readable } from 'svelte/store';
 import type { PersistenceAdapter } from '$lib/persistence/adapter';
 import { StorageUnavailableError } from '$lib/persistence/errors';
 import type { Elemental } from '$lib/domain/elemental';
+import { createIdbAdapter } from '$lib/persistence/idb-adapter';
+import { catalog } from '$lib/catalog';
 
 export type CollectionStatus = 'hydrating' | 'active' | 'degraded';
 
@@ -108,3 +110,5 @@ export function createCollectionStore(
 		toggle
 	};
 }
+
+export const collectionStore: CollectionStore = createCollectionStore(createIdbAdapter(), catalog);
