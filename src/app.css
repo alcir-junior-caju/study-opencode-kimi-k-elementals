@@ -1,0 +1,154 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import 'tailwindcss';
+
+@theme {
+	/* Resend-inspired dark palette */
+	--color-void-black: #000000;
+	--color-near-white: #f0f0f0;
+	--color-pure-white: #ffffff;
+	--color-silver: #a1a4a5;
+	--color-dark-gray: #464a4d;
+	--color-mid-gray: #5c5c5c;
+
+	/* Accents */
+	--color-accent-orange: #ff801f;
+	--color-accent-orange-4: #ff5900;
+	--color-accent-orange-11: #ffa057;
+	--color-accent-orange-subtle: rgba(255, 128, 31, 0.1);
+	--color-accent-orange-hover: rgba(255, 128, 31, 0.2);
+	--color-accent-green: #11ff99;
+	--color-accent-green-3: #22ff99;
+	--color-accent-green-subtle: rgba(17, 255, 153, 0.1);
+	--color-accent-green-hover: rgba(17, 255, 153, 0.2);
+	--color-accent-blue: #3b9eff;
+	--color-accent-blue-4: #0075ff;
+	--color-accent-blue-5: #0081fd;
+	--color-accent-blue-subtle: rgba(59, 158, 255, 0.1);
+	--color-accent-yellow: #ffc53d;
+	--color-accent-red: #ff2047;
+
+	/* Frost system */
+	--color-frost: rgba(214, 235, 253, 0.19);
+	--color-frost-alt: rgba(217, 237, 254, 0.145);
+
+	/* Surfaces */
+	--color-surface: rgba(255, 255, 255, 0.028);
+	--color-surface-hover: rgba(255, 255, 255, 0.08);
+	--color-glass-hover: rgba(255, 255, 255, 0.14);
+
+	/* Typography */
+	--font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+	--font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+
+	/* Border radius */
+	--radius-sm: 4px;
+	--radius-md: 8px;
+	--radius-card: 12px;
+	--radius-featured: 16px;
+	--radius-section: 24px;
+	--radius-pill: 9999px;
+
+	/* Shadows & rings */
+	--shadow-ring: 0 0 0 1px rgba(176, 199, 217, 0.145);
+	--shadow-focus: 0 0 0 8px rgba(0, 0, 0, 1);
+	--shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px -1px rgba(0, 0, 0, 0.1);
+}
+
+/* Base styles */
+html {
+	font-family: var(--font-sans);
+	color: var(--color-near-white);
+	background-color: var(--color-void-black);
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	min-height: 100vh;
+}
+
+/* Selection */
+::selection {
+	background-color: rgba(255, 128, 31, 0.3);
+	color: var(--color-pure-white);
+}
+
+/* Heading scale */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-weight: 600;
+	letter-spacing: -0.03em;
+	color: var(--color-near-white);
+}
+
+/* Link defaults */
+a {
+	color: inherit;
+	text-decoration: none;
+}
+
+a:not([class]) {
+	color: var(--color-accent-blue);
+	text-decoration: underline;
+}
+
+/* Focus visible */
+:focus-visible {
+	outline: none;
+	box-shadow: var(--shadow-focus);
+}
+
+/* Utility component patterns */
+@layer components {
+	.btn {
+		@apply inline-flex items-center justify-center gap-2 rounded-pill px-3 py-2 text-sm font-medium transition-all;
+	}
+
+	.btn:active {
+		@apply scale-[0.98];
+	}
+
+	.btn-primary {
+		@apply border border-frost bg-transparent text-near-white hover:bg-glass-hover;
+	}
+
+	.btn-solid {
+		@apply bg-pure-white text-void-black hover:bg-near-white;
+	}
+
+	.btn-secondary {
+		@apply border border-frost bg-transparent text-near-white hover:bg-glass-hover;
+	}
+
+	.btn-ghost {
+		@apply rounded-md bg-transparent text-near-white hover:bg-surface-hover;
+	}
+
+	.btn-chip {
+		@apply border border-frost bg-surface text-near-white hover:bg-glass-hover;
+	}
+
+	.card {
+		@apply rounded-card border border-frost bg-surface shadow-ring;
+	}
+
+	.card-featured {
+		@apply rounded-featured border border-frost bg-surface shadow-ring;
+	}
+
+	.input {
+		@apply rounded-sm border border-frost bg-void-black px-4 py-3 text-near-white placeholder:text-silver focus:outline-none focus:ring-2 focus:ring-accent-blue;
+	}
+
+	.frost-border {
+		@apply border border-frost;
+	}
+
+	.badge {
+		@apply rounded-pill px-3 py-1 text-xs font-medium;
+	}
+}

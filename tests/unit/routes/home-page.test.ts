@@ -8,7 +8,6 @@ import { writable, derived } from 'svelte/store';
 import type { Writable } from 'svelte/store';
 import type { CollectionStatus } from '$lib/stores/collection';
 import { catalog } from '$lib/catalog';
-import { RARITY_ORDER } from '$lib/domain/elemental';
 
 let mockCollection: Writable<Set<string>> = writable(new Set<string>());
 let mockStatus: Writable<CollectionStatus> = writable('active');
@@ -30,21 +29,20 @@ jest.unstable_mockModule('$lib/stores/collection', () => {
 });
 
 describe('Home page', () => {
-	const groups = catalog.groupedByRarityAndType();
+	const items = catalog.getAll();
 
 	beforeEach(() => {
 		mockCollection.set(new Set<string>());
 		mockStatus.set('active');
 	});
 
-	it('renderiza as 5 seções de raridade com seus grupos', async () => {
+	it('renderiza todos os itens do catálogo em uma única lista', async () => {
 		const HomePage = (await import('../../../src/routes/+page.svelte')).default;
 
-		render(HomePage, { props: { data: { groups } } });
+		render(HomePage, { props: { data: { items } } });
 
-		for (const rarity of RARITY_ORDER) {
-			expect(screen.getByRole('heading', { level: 2, name: rarity })).toBeInTheDocument();
-		}
+		const cards = screen.getAllByTestId('elemental-card');
+		expect(cards).toHaveLength(items.length);
 	});
 
 	it('exibe mensagem de erro em vez de lista quando data.error está presente', async () => {
@@ -55,16 +53,16 @@ describe('Home page', () => {
 		expect(
 			screen.getByText(/erro de integridade|não foi possível carregar o catálogo/i)
 		).toBeInTheDocument();
-		expect(screen.queryByRole('heading', { level: 2 })).not.toBeInTheDocument();
+		expect(screen.queryByTestId('elemental-card')).not.toBeInTheDocument();
 	});
 
 	it('exibe DegradedBanner e omite indicação de posse em modo degradado', async () => {
 		mockStatus.set('degraded');
-		mockCollection.set(new Set([groups[0].items[0].id]));
+		mockCollection.set(new Set([items[0].id]));
 
 		const HomePage = (await import('../../../src/routes/+page.svelte')).default;
 
-		render(HomePage, { props: { data: { groups } } });
+		render(HomePage, { props: { data: { items } } });
 
 		expect(screen.getByText(/armazenamento indisponível|modo degradado/i)).toBeInTheDocument();
 	});
@@ -72,7 +70,7 @@ describe('Home page', () => {
 	it('LocalStorageNotice está presente em todo carregamento', async () => {
 		const HomePage = (await import('../../../src/routes/+page.svelte')).default;
 
-		render(HomePage, { props: { data: { groups } } });
+		render(HomePage, { props: { data: { items } } });
 
 		expect(
 			screen.getByText(/coleção é local e será perdida ao limpar os dados do navegador/i)

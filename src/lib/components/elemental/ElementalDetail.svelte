@@ -7,16 +7,21 @@
 	$: displayName = `${elemental.type} ${elemental.variation}`;
 </script>
 
-<article class="elemental-detail">
-	<header>
-		<h1>{displayName}</h1>
-		<p class="elemental-meta">
-			<span class="rarity">{elemental.rarity}</span>
-			<span class="variation">{elemental.variation}</span>
+<article class="card-featured overflow-hidden">
+	<header class="p-6 md:p-8">
+		<h1 class="text-3xl font-semibold tracking-tight text-near-white md:text-4xl">
+			{displayName}
+		</h1>
+		<p class="mt-2 flex items-center gap-2 text-base text-silver">
+			<span class="rounded-pill border border-frost bg-surface px-3 py-1 text-xs font-semibold uppercase tracking-wide text-near-white">
+				{elemental.rarity}
+			</span>
+			<span class="text-dark-gray">·</span>
+			<span>{elemental.variation}</span>
 		</p>
 	</header>
 
-	<figure class="elemental-image-wrapper">
-		<ElementalImage src={elemental.imagePath} alt={displayName} />
+	<figure class="w-full overflow-hidden bg-surface">
+		<ElementalImage src={elemental.imagePath} alt={displayName} fit="contain" height="auto" />
 	</figure>
 </article>

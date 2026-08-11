@@ -2,7 +2,7 @@ import { test, expect } from '@playwright/test';
 
 test('fluxo crítico: marcar, persistir, recarregar, editar e remover na coleção', async ({ page }) => {
 	await page.goto('/');
-	await expect(page.locator('section h2:has-text("Raro")')).toBeVisible();
+	await expect(page.locator('h1:has-text("Catálogo de Elementais")')).toBeVisible();
 
 	const cards = page.locator('[data-testid="elemental-card"]');
 	await expect(cards).toHaveCount(117);
@@ -30,7 +30,7 @@ test('fluxo crítico: marcar, persistir, recarregar, editar e remover na coleç�
 
 	// Recarregar a página e confirmar que as marcações persistiram
 	await page.reload();
-	await expect(page.locator('section h2:has-text("Raro")')).toBeVisible();
+	await expect(page.locator('h1:has-text("Catálogo de Elementais")')).toBeVisible();
 
 	await expect(firstToggle).toHaveAttribute('aria-pressed', 'true');
 	await expect(secondToggle).toHaveAttribute('aria-pressed', 'true');

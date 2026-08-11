@@ -7,21 +7,26 @@
 	export let neighbors: Neighbors;
 </script>
 
-<nav class="circular-nav" aria-label="Navegação entre elementais">
+<nav
+	class="mt-6 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-between"
+	aria-label="Navegação entre elementais"
+>
 	<a
 		href="/elemental/{neighbors.previousId}"
-		class="nav-link nav-link--previous"
+		class="btn btn-secondary order-2 sm:order-1"
 		data-sveltekit-preload-data
 		aria-label="Anterior: {neighbors.previousId}"
 	>
 		← Anterior
 	</a>
 
-	<CollectionToggle id={elemental.id} />
+	<div class="order-1 sm:order-2 sm:w-48">
+		<CollectionToggle id={elemental.id} />
+	</div>
 
 	<a
 		href="/elemental/{neighbors.nextId}"
-		class="nav-link nav-link--next"
+		class="btn btn-secondary order-3"
 		data-sveltekit-preload-data
 		aria-label="Próximo: {neighbors.nextId}"
 	>

@@ -32,21 +32,33 @@
 	<title>Minha coleção — Diário de Coleção Elementais</title>
 </svelte:head>
 
-<main class="collection-page">
-	<h1>Minha coleção</h1>
+<main class="mx-auto w-full max-w-[1136px] flex-1 px-4 py-8 md:px-6 md:py-12">
+	<div class="mb-8 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between md:mb-12">
+		<div>
+			<h1 class="text-4xl font-semibold tracking-tight text-near-white md:text-5xl">
+				Minha coleção
+			</h1>
+			<p class="mt-2 text-base text-silver">
+				Gerencie os elementais que você já colecionou.
+			</p>
+		</div>
 
-	{#if !degraded}
-		<EditCollectionBar />
-	{/if}
+		{#if !degraded}
+			<EditCollectionBar />
+		{/if}
+	</div>
 
 	{#if removeError}
-		<div role="alert" class="remove-error">
+		<div role="alert" class="mb-6 rounded-card border border-frost bg-surface p-4 text-silver">
 			<p>{removeError}</p>
 		</div>
 	{/if}
 
 	{#if degraded}
-		<div role="alert" class="degraded-message">
+		<div
+			role="alert"
+			class="rounded-card border border-accent-orange bg-accent-orange-subtle px-4 py-3 text-sm font-medium text-accent-orange"
+		>
 			<p>
 				Não foi possível carregar sua coleção. O armazenamento local está indisponível.
 			</p>
@@ -54,7 +66,7 @@
 	{:else if items.length === 0}
 		<EmptyCollection />
 	{:else}
-		<ul class="collection-list">
+		<ul class="flex flex-col gap-3">
 			{#each items as item (item.id)}
 				<CollectionListItem
 					elemental={item}

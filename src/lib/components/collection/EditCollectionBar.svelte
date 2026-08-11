@@ -8,10 +8,16 @@
 	}
 </script>
 
-<div class="edit-collection-bar">
-	{#if $isEditing}
-		<button type="button" on:click={toggleEdit}>Encerrar edição</button>
-	{:else}
-		<button type="button" on:click={toggleEdit}>Editar coleção</button>
-	{/if}
-</div>
+{#if $isEditing}
+	<button
+		type="button"
+		class="btn border-accent-orange bg-accent-orange-subtle text-accent-orange hover:bg-accent-orange-hover"
+		on:click={toggleEdit}
+	>
+		Encerrar edição
+	</button>
+{:else}
+	<button type="button" class="btn btn-primary" on:click={toggleEdit}>
+		Editar coleção
+	</button>
+{/if}

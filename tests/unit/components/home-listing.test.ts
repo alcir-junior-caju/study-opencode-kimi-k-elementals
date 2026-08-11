@@ -29,33 +29,11 @@ jest.unstable_mockModule('$lib/stores/collection', () => {
 });
 
 describe('Home listing components', () => {
-	const groups = catalog.groupedByRarityAndType();
-	const firstGroup = groups[0];
-	const firstElemental = firstGroup.items[0];
+	const firstElemental = catalog.getAll()[0];
 
 	beforeEach(() => {
 		mockCollection.set(new Set<string>());
 		mockStatus.set('active');
-	});
-
-	it('RaritySection renderiza o cabeçalho da raridade e seus tipos', async () => {
-		const RaritySection = (await import('$lib/components/catalog/RaritySection.svelte')).default;
-
-		render(RaritySection, { props: { rarity: firstGroup.rarity, groups: [firstGroup] } });
-
-		expect(screen.getByRole('heading', { level: 2 })).toHaveTextContent(firstGroup.rarity);
-		expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent(firstGroup.type);
-	});
-
-	it('TypeGroup renderiza o grupo de tipo', async () => {
-		const TypeGroup = (await import('$lib/components/catalog/TypeGroup.svelte')).default;
-
-		render(TypeGroup, { props: { group: firstGroup } });
-
-		expect(screen.getByRole('heading', { level: 3 })).toHaveTextContent(firstGroup.type);
-		for (const item of firstGroup.items) {
-			expect(screen.getByText(`${item.type} ${item.variation}`)).toBeInTheDocument();
-		}
 	});
 
 	it('ElementalCard exibe nome derivado, imagem lazy e link para tela individual', async () => {

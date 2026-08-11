@@ -10,7 +10,7 @@
 	<title>{data.elemental.type} {data.elemental.variation} — Diário de Coleção Elementais</title>
 </svelte:head>
 
-<main class="elemental-page">
+<main class="mx-auto w-full max-w-[1136px] flex-1 px-4 py-8 md:px-6 md:py-12">
 	<ElementalDetail elemental={data.elemental} />
 	<CircularNav elemental={data.elemental} neighbors={data.neighbors} />
 </main>

@@ -10,13 +10,28 @@
 	$: isCollected = collectionStore.has(elemental.id);
 </script>
 
-<div class="elemental-card" data-testid="elemental-card">
-	<a href="/elemental/{elemental.id}" class="elemental-card-link">
-		<ElementalImage src={elemental.imagePath} alt={displayName} />
-		<p class="elemental-name">{displayName}</p>
-		{#if $isCollected}
-			<span class="collected-indicator" aria-label="coletado">✓</span>
-		{/if}
+<div
+	class="card group flex flex-col overflow-hidden transition-colors hover:border-frost hover:bg-surface-hover"
+	data-testid="elemental-card"
+>
+	<a href="/elemental/{elemental.id}" class="block flex-1">
+		<div class="relative aspect-square overflow-hidden bg-surface">
+			<ElementalImage src={elemental.imagePath} alt={displayName} />
+			{#if $isCollected}
+				<span
+					class="collected-indicator absolute right-2 top-2 flex h-6 w-6 items-center justify-center rounded-full bg-accent-green text-xs text-void-black"
+					aria-label="coletado"
+				>
+					✓
+				</span>
+			{/if}
+		</div>
+		<div class="p-3">
+			<p class="text-sm font-semibold text-near-white">{displayName}</p>
+			<p class="text-xs text-silver">{elemental.rarity}</p>
+		</div>
 	</a>
-	<CollectionToggle id={elemental.id} />
+	<div class="px-3 pb-3">
+		<CollectionToggle id={elemental.id} />
+	</div>
 </div>
