@@ -5,8 +5,8 @@
  * Metas monitoradas:
  * - bundle JavaScript inicial < 150 KB gzip (soma dos bytes transferidos dos
  *   recursos .js na navegação inicial de `/`);
- * - carregamento do catálogo < 200 ms (tempo até a primeira seção de raridade
- *   estar renderizada no build pré-renderizado);
+ * - carregamento do catálogo < 200 ms (tempo até o primeiro card do catálogo
+ *   estar renderizado no build pré-renderizado);
  * - cold start da home < 2 s em rede 4G ( tempo até `networkidle` na navegação
  *   inicial).
  *
@@ -111,7 +111,7 @@ async function measureCatalogLoad(page) {
 	await page.setExtraHTTPHeaders({ 'Cache-Control': 'no-store' });
 	const start = Date.now();
 	await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded' });
-	await page.waitForSelector('section h2:has-text("Raro")', { timeout: 5000 });
+	await page.waitForSelector('[data-testid="elemental-card"]', { timeout: 5000 });
 	return Date.now() - start;
 }
 
@@ -127,7 +127,7 @@ async function measureColdStart4G(page) {
 	await page.goto('about:blank');
 	const start = Date.now();
 	await page.goto(`${BASE_URL}/`, { waitUntil: 'domcontentloaded' });
-	await page.waitForSelector('section h2:has-text("Raro")', { timeout: 5000 });
+	await page.waitForSelector('[data-testid="elemental-card"]', { timeout: 5000 });
 	return Date.now() - start;
 }
 
