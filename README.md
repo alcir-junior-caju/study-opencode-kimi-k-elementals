@@ -1,5 +1,7 @@
 # Diário de Coleção Elementais
 
+🌐 **Acesse a aplicação:** [https://alcir-junior-caju.github.io/study-opencode-kimi-k-elementals/](https://alcir-junior-caju.github.io/study-opencode-kimi-k-elementals/)
+
 Aplicação web estática que permite aos jogadores de Fortnite **registrar quais colecionáveis elementais possuem**. O catálogo completo é carregado a partir de um JSON estático e as escolhas do usuário são persistidas localmente no navegador via IndexedDB — sem backend, sem login.
 
 ## Sobre este estudo
@@ -106,7 +108,7 @@ Serve localmente o conteúdo de `build/` (por padrão em `http://localhost:4173`
 
 O projeto é um site estático (SvelteKit `adapter-static`) publicado a partir do diretório `build/`. Já existem configurações prontas no repositório:
 
-- **GitHub Pages** — `.github/workflows/pages.yml` faz build e deploy automático a cada push na `main` (ative `Settings > Pages > Source: GitHub Actions` no repositório). O `base` path é ajustado automaticamente para o nome do repositório.
+- **GitHub Pages** — `.github/workflows/pages.yml` faz build e deploy automático a cada push na `main` (ative `Settings > Pages > Source: GitHub Actions` no repositório). URL: [https://alcir-junior-caju.github.io/study-opencode-kimi-k-elementals/](https://alcir-junior-caju.github.io/study-opencode-kimi-k-elementals/)
 - **Netlify** — `netlify.toml` (`npm run build`, publish `build/`, Node 20, redirect SPA para `/index.html`)
 - **Vercel** — `vercel.json` (framework `sveltekit`, `npm ci` + `npm run build`, output `build/`)
 
