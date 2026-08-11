@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { collectionStore } from '$lib/stores/collection';
 	import ElementalImage from '$lib/components/common/ElementalImage.svelte';
 	import CollectionToggle from '$lib/components/elemental/CollectionToggle.svelte';
@@ -14,7 +15,7 @@
 	class="card group flex flex-col overflow-hidden transition-colors hover:border-frost hover:bg-surface-hover"
 	data-testid="elemental-card"
 >
-	<a href="/elemental/{elemental.id}" class="block flex-1">
+	<a href="{base}/elemental/{elemental.id}" class="block flex-1">
 		<div class="relative aspect-square overflow-hidden bg-surface">
 			<ElementalImage src={elemental.imagePath} alt={displayName} />
 			{#if $isCollected}

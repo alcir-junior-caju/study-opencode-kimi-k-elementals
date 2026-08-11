@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import CollectionToggle from './CollectionToggle.svelte';
 	import type { Elemental } from '$lib/domain/elemental';
 	import type { Neighbors } from '$lib/domain/catalog-group';
@@ -12,7 +13,7 @@
 	aria-label="Navegação entre elementais"
 >
 	<a
-		href="/elemental/{neighbors.previousId}"
+		href="{base}/elemental/{neighbors.previousId}"
 		class="btn btn-secondary order-2 sm:order-1"
 		data-sveltekit-preload-data
 		aria-label="Anterior: {neighbors.previousId}"
@@ -25,7 +26,7 @@
 	</div>
 
 	<a
-		href="/elemental/{neighbors.nextId}"
+		href="{base}/elemental/{neighbors.nextId}"
 		class="btn btn-secondary order-3"
 		data-sveltekit-preload-data
 		aria-label="Próximo: {neighbors.nextId}"

@@ -2,6 +2,10 @@
 
 Aplicação web estática que permite aos jogadores de Fortnite **registrar quais colecionáveis elementais possuem**. O catálogo completo é carregado a partir de um JSON estático e as escolhas do usuário são persistidas localmente no navegador via IndexedDB — sem backend, sem login.
 
+## Sobre este estudo
+
+Este projeto é resultado de um estudo de **desenvolvimento guiado por IA**. Todo o fluxo de especificação, arquitetura e design foi conduzido com auxílio do **OpenCode + Kimi K3**, enquanto a implementação e codificação foram realizadas com **Kimi K2.7**. Os documentos de apoio em `docs/` (ideia do app, PRD, HLD, FDDs e diagramas) também foram gerados e refinidos durante esse processo.
+
 ## Funcionalidades
 
 - **Listagem do catálogo** — página inicial exibe todos os 117 elementais agrupados por raridade (*Raro*, *Especial*, *Épico*, *Lendário*, *Mítico*) e variação (Normal, Dourado, Gelatinoso, etc.).
@@ -102,6 +106,7 @@ Serve localmente o conteúdo de `build/` (por padrão em `http://localhost:4173`
 
 O projeto é um site estático (SvelteKit `adapter-static`) publicado a partir do diretório `build/`. Já existem configurações prontas no repositório:
 
+- **GitHub Pages** — `.github/workflows/pages.yml` faz build e deploy automático a cada push na `main` (ative `Settings > Pages > Source: GitHub Actions` no repositório). O `base` path é ajustado automaticamente para o nome do repositório.
 - **Netlify** — `netlify.toml` (`npm run build`, publish `build/`, Node 20, redirect SPA para `/index.html`)
 - **Vercel** — `vercel.json` (framework `sveltekit`, `npm ci` + `npm run build`, output `build/`)
 

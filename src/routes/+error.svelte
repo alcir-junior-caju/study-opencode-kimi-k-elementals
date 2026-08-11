@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 </script>
 
@@ -13,5 +14,5 @@
 	<p class="mt-4 text-lg text-silver">
 		{$page.error?.message ?? 'Página não encontrada.'}
 	</p>
-	<a href="/" class="btn btn-primary mt-8">Voltar ao catálogo</a>
+	<a href="{base}/" class="btn btn-primary mt-8">Voltar ao catálogo</a>
 </main>

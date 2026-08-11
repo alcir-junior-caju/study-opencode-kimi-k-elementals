@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { base } from '$app/paths';
+
 	export let src: string;
 	export let alt: string;
 	export let fit: 'cover' | 'contain' = 'cover';
@@ -10,7 +12,7 @@
 		if (value.startsWith('/') || value.startsWith('data:') || value.startsWith('http')) {
 			return value;
 		}
-		return `/${value}`;
+		return `${base}/${value}`;
 	}
 
 	function handleError() {

@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import ElementalImage from '$lib/components/common/ElementalImage.svelte';
 	import type { Elemental } from '$lib/domain/elemental';
 
@@ -12,7 +13,7 @@
 <li
 	class="collection-list-item card flex items-center gap-4 overflow-hidden p-3 transition-colors hover:border-frost hover:bg-surface-hover"
 >
-	<a href="/elemental/{elemental.id}" class="flex flex-1 items-center gap-4">
+	<a href="{base}/elemental/{elemental.id}" class="flex flex-1 items-center gap-4">
 		<div class="h-16 w-16 flex-shrink-0 overflow-hidden rounded-card bg-surface">
 			<ElementalImage src={elemental.imagePath} alt={displayName} />
 		</div>

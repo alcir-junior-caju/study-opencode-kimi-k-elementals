@@ -1,18 +1,19 @@
 <script lang="ts">
+	import { base } from '$app/paths';
 	import { page } from '$app/stores';
 
-	$: currentPath = $page.url.pathname;
+	$: currentPath = $page.url.pathname.slice(base.length) || '/';
 </script>
 
 <header class="sticky top-0 z-50 border-b border-frost bg-void-black/95 backdrop-blur-sm">
 	<div class="mx-auto flex max-w-[1136px] items-center justify-between px-4 py-4 md:px-6">
-		<a href="/" class="text-xl font-semibold tracking-tight text-near-white">Diário Elementais</a>
+		<a href="{base}/" class="text-xl font-semibold tracking-tight text-near-white">Diário Elementais</a>
 
 		<nav aria-label="Navegação principal">
 			<ul class="flex items-center gap-2">
 				<li>
 					<a
-						href="/"
+						href="{base}/"
 						class="rounded-pill border px-4 py-2 text-sm font-medium text-near-white transition-all"
 						class:border-frost={currentPath !== '/'}
 						class:bg-transparent={currentPath !== '/'}
@@ -27,7 +28,7 @@
 				</li>
 				<li>
 					<a
-						href="/colecao"
+						href="{base}/colecao"
 						class="rounded-pill border px-4 py-2 text-sm font-medium text-near-white transition-all"
 						class:border-frost={currentPath !== '/colecao'}
 						class:bg-transparent={currentPath !== '/colecao'}

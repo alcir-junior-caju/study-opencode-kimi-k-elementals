@@ -1,4 +1,5 @@
 import { redirect } from '@sveltejs/kit';
+import { base } from '$app/paths';
 import type { PageLoad } from './$types';
 import { catalog } from '$lib/catalog';
 
@@ -10,7 +11,7 @@ export const load: PageLoad = ({ params }) => {
 	const elemental = catalog.getById(params.id);
 
 	if (!elemental) {
-		redirect(307, '/');
+		redirect(307, base || '/');
 	}
 
 	const neighbors = catalog.getNeighbors(params.id)!;
